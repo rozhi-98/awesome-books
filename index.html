@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+  <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>hello wrorld</h1>
-  </body>
+    <meta
+      name="description"
+      content="This is a capstone a project I did it by myself, It consists of two pages (the home page, the about page)"
+    />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e83d856101.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Awesome Books</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+      <h2 class="logo">Awesome Book</h2>
+    <ul>
+      <li><a href="#" id="nav-list-btn" class="active">List</a></li>
+      <li><a href="#" id="nav-new-btn">New</a></li>
+      <li><a href="#" id="nav-contact-btn">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- end nav -->
+    <!-- start time -->
+    <div class="time">
+      <div class="container">
+        <p id="timeText">october, 26th, 2022</p>
+      </div>
+    </div>
+    <!-- end time -->
+  <!-- Loading Screen -->
+  <div class="screen-loader hide" id="screen-load">
+    <div class="loadingio-spinner-ripple-i4e1w3xi5u"><div class="ldio-6cq23kwp2qh">
+      <div></div><div></div>
+      </div></div>
+  </div>
+  <!-- Main content -->
+  <section id="content" class="list-back">
+    <!-- Library -->
+    <div class="list show" id="list-id">
+      <h1>All awesome books</h1>
+      <div id="library">
+        <div class="empty" id="empty-id">
+          <h2>Library is empty. Add some books to see them here</h2>
+          <i class="fa-solid fa-book fa-3x"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Form -->
+    <div class="add hide" id="add-id">
+      <h1>Add a new Book</h1>
+      <form action="#" id="form-id">
+        <input type="text" name="title" id="title" placeholder="Title" required>
+        <input type="text" name="author" id="author" placeholder="Author" required>
+        <button id="add-btn" type="submit" >Add</button>
+      </form>
+    </div>
+    <!-- Contact -->
+    <div class="contact hide" id="contact-id">
+      <h1>Contact Information</h1>
+      <p>Do you have any Information or do you just want to say "Hello"? <br> You can reach out to us!</p>
+      <ul>
+        <li>Our e-mail: mrkamin2@gamil.com</li>
+        <li>Our phone number: 0093797578699</li>
+        <li>Our address: 8 streat, 11, Kabul Afghanistan</li>
+      </ul>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>Copyright &copy 2022 All rights reserved | A project by MRK Amin and Rozh Bahman</p>
+  </footer>
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script src="storage.js"></script>
+</body>
 </html>
