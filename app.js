@@ -54,8 +54,7 @@ function getDataAppend() {
 
     if (!title || !author) return;
 
-    const id =
-      new Date().getTime().toString() + `${Math.trunc(Math.random() * 100)}`;
+    const id = `${new Date().getTime().toString()}${Math.trunc(Math.random() * 100)}`;
 
     const bookData = {
       id,
@@ -82,7 +81,7 @@ function removeBook() {
     if (!clickedBtn) return;
 
     console.log(clickedBtn);
-    const id = clickedBtn.dataset.id;
+    const { id } = clickedBtn.dataset;
 
     // Filter out clicked book
     booksArray = booksArray.filter((book) => book.id !== id);
