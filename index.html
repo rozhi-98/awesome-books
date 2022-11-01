@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>hello wrorld</h1>
+    <div class="container">
+      <h1>Awesome books</h1>
+      <div class="book-list"></div>
+
+      <form method="post" action="">
+        <div>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="title"
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="author"
+            required
+          />
+        </div>
+        <button type="button" id="addButton">Add</button>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
