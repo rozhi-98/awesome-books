@@ -22,8 +22,7 @@ document.querySelector('.book-form').addEventListener('submit', (e) => {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
   const id = `${new Date().getTime().toString()}${Math.trunc(
-    // eslint-disable-next-line comma-dangle
-    Math.random() * 100
+    Math.random() * 100,
   )}`;
 
   // createan object of book class
