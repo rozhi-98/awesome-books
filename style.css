@@ -1,4 +1,5 @@
-form, table {
+form,
+table {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
