@@ -1,97 +1,51 @@
-const booksContainer = document.querySelector('.book-list');
-const form = document.querySelector('.form');
+import UI from './UI.js';
+import Store from './Store.js';
 
-let booksArray = [];
-
-if (localStorage.getItem('books')) {
-  booksArray = JSON.parse(localStorage.getItem('books'));
+// creating a class for the books
+class Book {
+  constructor(title, author, id) {
+    this.title = title;
+    this.author = author;
+    this.id = id;
+  }
 }
 
-const createBookMarkup = (data) => {
-  const markUp = `
+// create event to display books
 
-        <li class="book-one">
-          <h3 class="book-title">${data.title}</h3>
-          <p class="book-author">${data.author}</p>
-          <button class="remove-button" type="button" data-id="${data.id}">Remove</button>
-          <hr />
-        </li>
-     
-  `;
+document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
-  return markUp;
-};
+// adding a book
 
-const injectMarkup = (passedArr) => {
-  let books = '';
+document.querySelector('.book-form').addEventListener('submit', (e) => {
+  e.preventDefault();
 
-  passedArr.forEach((obj) => {
-    books += createBookMarkup(obj);
-  });
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const id = `${new Date().getTime().toString()}${Math.trunc(
+    Math.random() * 100,
+  )}`;
 
-  booksContainer.innerHTML = books;
-};
+  // createan object of book class
 
-injectMarkup(booksArray);
+  const book = new Book(title, author, id);
 
-function appendBook(data) {
-  const bookMarkup = `<li class="book-one">
-  <h3 class="book-title">${data.title}</h3>
-  <p class="book-author">${data.author}</p>
-  <button class="remove-button" type="button" data-id="${data.id}" >Remove</button>
-  <hr />
-</li>`;
+  UI.addBookToList(book);
 
-  booksContainer.insertAdjacentHTML('beforeend', bookMarkup);
-}
+  // Add book from localstorage
 
-function getDataAppend() {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  Store.addBook(book);
 
-    const title = e.target.title.value;
-    const author = e.target.author.value;
+  // method to clear the fields after submission
 
-    if (!title || !author) return;
+  UI.clearFields();
+});
 
-    const id = `${new Date().getTime().toString()}${Math.trunc(Math.random() * 100)}`;
+// removing a book
 
-    const bookData = {
-      id,
-      title,
-      author,
-    };
+document.querySelector('#book-list').addEventListener('click', (e) => {
+  // remove book from UI
+  UI.deleteBook(e.target);
 
-    // Append book
-    appendBook(bookData);
-
-    // Adding to existing array
-    booksArray.push(bookData);
-
-    localStorage.setItem('books', JSON.stringify(booksArray));
-  });
-}
-
-getDataAppend();
-
-function removeBook() {
-  booksContainer.addEventListener('click', (e) => {
-    const clickedBtn = e.target.closest('.remove-button');
-
-    if (!clickedBtn) return;
-
-    console.log(clickedBtn);
-    const { id } = clickedBtn.dataset;
-
-    // Filter out clicked book
-    booksArray = booksArray.filter((book) => book.id !== id);
-
-    // Override the existing list with new list to update UI
-    injectMarkup(booksArray);
-
-    // Update local storage
-    localStorage.setItem('books', JSON.stringify(booksArray));
-  });
-}
-
-removeBook();
+  // remove book from storage
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+});
