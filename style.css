@@ -7,6 +7,31 @@ table {
   gap: 20px;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
+}
+
+.date {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.display-date {
+  margin-top: 10px;
+}
+
+.info {
+  margin: 5% 25% 0 !important;
+}
+
+.footer-container {
+  text-align: center;
+  border: 2px solid #333;
+  padding: 10px;
+  margin-top: calc(100vh - 35%);
+}
+
+.hide {
+  display: none;
 }
