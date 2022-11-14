@@ -1,5 +1,5 @@
-import UI from './UI.js';
-import Store from './Store.js';
+import UI from './modules/UI.js';
+import Store from './modules/Store.js';
 
 // creating a class for the books
 class Book {
@@ -25,7 +25,7 @@ document.querySelector('.book-form').addEventListener('submit', (e) => {
     Math.random() * 100,
   )}`;
 
-  // createan object of book class
+  // create an object of book class
 
   const book = new Book(title, author, id);
 
