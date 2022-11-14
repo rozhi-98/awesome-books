@@ -47,7 +47,7 @@ You can [ learn more here>>](https://stylelint.io/user-guide/usage/cli/#autofixi
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://rozhi-98.github.io/awesome-books/)
 
 ## Author
 
