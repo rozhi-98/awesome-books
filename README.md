@@ -1,7 +1,7 @@
-# awesome-books
+# awesome-books-ES6-modules
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project is done using HTML, SCSS and Javascript. The project is also set up with html-css and javascript linters.
+This project is done using HTML, SCSS and Javascript. The project is also set up with html-css and javascript linters. I have modified it using ES-6 modules to be mor organized and cleaner.
 
 ## Built With
 

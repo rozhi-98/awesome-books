@@ -1,5 +1,5 @@
-import UI from './UI.js';
-import Store from './Store.js';
+import UI from './modules/UI.js';
+import Store from './modules/Store.js';
 
 // creating a class for the books
 class Book {
